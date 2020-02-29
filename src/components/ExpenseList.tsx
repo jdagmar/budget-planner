@@ -8,7 +8,7 @@ type Props = {
 export const ExpenseList = (props: Props) => {
   const expenseListItems = props.expenses.map(expense => {
     return (
-      <li className="flex">
+      <li className="flex justify-between my-2">
         <p className="mr-1">{expense.title}</p>
         <p>{expense.cost} kr</p>
       </li>

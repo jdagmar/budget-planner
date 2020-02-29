@@ -12,11 +12,9 @@ export const ExpenseSummary = (props: Props) => {
     return expenses.reduce((x, y) => x + y, 0);
   };
 
-  console.log(expenses);
-
   return (
-    <div>
-      <p>Sum of expenses: {calc(expenses)}</p>
+    <div className="mt-2">
+      <p>Sum of expenses: {calc(expenses)} SEK</p>
     </div>
   );
 };

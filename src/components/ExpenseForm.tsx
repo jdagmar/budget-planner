@@ -30,23 +30,25 @@ export const ExpenseForm = (props: Props) => {
         }
       }}
     >
-      <Input
-        type="text"
-        label="Title"
-        value={props.expenseForm.title || ''}
-        onChange={newTitle =>
-          props.onChange({ ...props.expenseForm, title: newTitle })
-        }
-      />
-      <Input
-        type="text"
-        label="Cost"
-        value={props.expenseForm.cost?.toString() || ''}
-        onChange={newCost =>
-          props.onChange({ ...props.expenseForm, cost: newCost })
-        }
-      />
-      <Button text="add" />
+      <div className="flex justify-between flex-col">
+        <Input
+          type="text"
+          label="Title"
+          value={props.expenseForm.title || ''}
+          onChange={newTitle =>
+            props.onChange({ ...props.expenseForm, title: newTitle })
+          }
+        />
+        <Input
+          type="text"
+          label="Cost"
+          value={props.expenseForm.cost?.toString() || ''}
+          onChange={newCost =>
+            props.onChange({ ...props.expenseForm, cost: newCost })
+          }
+        />
+        <Button text="add" classes="w-1/5" />
+      </div>
       <p>{props.expenseForm.error}</p>
     </form>
   );

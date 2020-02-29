@@ -11,14 +11,14 @@ type Props = {
 export const Input = (props: Props) => {
   const id = `${props.label.toLowerCase()}-input`;
   return (
-    <div>
-      <label htmlFor={id} className="block font-sans mb-2">
+    <div className="mb-2">
+      <label htmlFor={id} className="block font-sans mb-2 text-sm">
         {props.label}
       </label>
       <input
         id={id}
         type={props.type}
-        className="border border-gray-800 p-1"
+        className="border border-gray-800 p-1 w-full rounded-sm"
         value={props.value}
         onChange={e => {
           props.onChange(e.target.value);
