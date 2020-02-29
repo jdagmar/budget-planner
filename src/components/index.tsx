@@ -5,3 +5,4 @@ export { Button } from './Button';
 export { AddIcon } from './Icons';
 export { ExpenseForm } from './ExpenseForm';
 export { ExpenseList } from './ExpenseList';
+export { IncomeForm } from './IncomeForm';

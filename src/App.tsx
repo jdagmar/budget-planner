@@ -1,5 +1,11 @@
 import React, { useReducer } from 'react';
-import { ExpenseForm, ExpenseSummary, Header, ExpenseList } from './components';
+import {
+  ExpenseForm,
+  ExpenseSummary,
+  Header,
+  ExpenseList,
+  IncomeForm,
+} from './components';
 import { Action, State } from './State';
 
 const reducer = (state: State, action: Action): State => {
@@ -15,12 +21,23 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         addExpenseForm: action.payload,
       };
+    case 'setIncome':
+      return {
+        ...state,
+        income: action.payload,
+      };
+    case 'updateIncome':
+      return {
+        ...state,
+        income: action.payload,
+      };
   }
 };
 
 const initState: State = {
   expenses: [],
   addExpenseForm: {},
+  income: 0,
 };
 
 export const AppContext = React.createContext([
@@ -33,7 +50,14 @@ export const App = () => {
 
   return (
     <main className="m-4">
+      <p>{state.income}</p>
       <Header />
+      <IncomeForm
+        income={state.income}
+        onChange={income => {
+          dispatch({ type: 'setIncome', payload: income });
+        }}
+      />
       <ExpenseForm
         onSubmit={expense => dispatch({ type: 'addExpense', payload: expense })}
         expenseForm={state.addExpenseForm}
