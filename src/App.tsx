@@ -16,28 +16,30 @@ const reducer = (state: State, action: Action): State => {
         expenses: [...state.expenses, action.payload],
         addExpenseForm: {},
       };
-    case 'UpdateExpenseForm':
+    case 'updateExpenseForm':
       return {
         ...state,
         addExpenseForm: action.payload,
       };
     case 'setIncome':
+      const newIncome = parseInt(action.payload.income || '');
+
       return {
         ...state,
-        income: action.payload,
+        income: action.payload.error ? state.income : newIncome,
+        setIncomeForm: action.payload,
       };
-    case 'updateIncome':
-      return {
-        ...state,
-        income: action.payload,
-      };
+    case 'removeExpense':
+      // const updated = state.expenses.filter(item => item !== action.payload);
+      return state;
   }
 };
 
 const initState: State = {
   expenses: [],
+  income: undefined,
   addExpenseForm: {},
-  income: 0,
+  setIncomeForm: {},
 };
 
 export const AppContext = React.createContext([
@@ -50,10 +52,9 @@ export const App = () => {
 
   return (
     <main className="m-4">
-      <p>{state.income}</p>
       <Header />
       <IncomeForm
-        income={state.income}
+        setIncomeForm={state.setIncomeForm}
         onChange={income => {
           dispatch({ type: 'setIncome', payload: income });
         }}
@@ -62,11 +63,19 @@ export const App = () => {
         onSubmit={expense => dispatch({ type: 'addExpense', payload: expense })}
         expenseForm={state.addExpenseForm}
         onChange={expense => {
-          dispatch({ type: 'UpdateExpenseForm', payload: expense });
+          dispatch({ type: 'updateExpenseForm', payload: expense });
         }}
       />
-      <ExpenseList expenses={state.expenses} />
-      <ExpenseSummary expenses={state.expenses} />
+      <ExpenseList
+        expenses={state.expenses}
+        onClick={event => {
+          dispatch({ type: 'removeExpense', payload: event });
+        }}
+      />
+      <ExpenseSummary
+        expenses={state.expenses}
+        setIncomeForm={state.setIncomeForm}
+      />
     </main>
   );
 };

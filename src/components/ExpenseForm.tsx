@@ -13,9 +13,10 @@ export const ExpenseForm = (props: Props) => {
   return (
     <form
       onSubmit={e => {
-        const { cost, title, error } = props.expenseForm;
+        const { cost, title } = props.expenseForm;
 
         e.preventDefault();
+
         if (
           cost !== undefined &&
           title !== undefined &&

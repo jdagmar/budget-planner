@@ -6,8 +6,8 @@ export type Expense = {
 export type Action =
   | AddExpenseAction
   | UpdateExpenseFormAction
-  | SetIncome
-  | UpdateIncome;
+  | SetIncomeAction
+  | RemoveExpenseAction;
 
 export type AddExpenseAction = {
   type: 'addExpense';
@@ -15,18 +15,23 @@ export type AddExpenseAction = {
 };
 
 export type UpdateExpenseFormAction = {
-  type: 'UpdateExpenseForm';
+  type: 'updateExpenseForm';
   payload: AddExpenseForm;
 };
 
-export type SetIncome = {
+export type SetIncomeAction = {
   type: 'setIncome';
-  payload: number;
+  payload: SetIncomeForm;
 };
 
-export type UpdateIncome = {
-  type: 'updateIncome';
-  payload: number;
+export type RemoveExpenseAction = {
+  type: 'removeExpense';
+  payload: string;
+};
+
+export type SetIncomeForm = {
+  income?: string;
+  error?: string;
 };
 
 export type AddExpenseForm = {
@@ -36,7 +41,8 @@ export type AddExpenseForm = {
 };
 
 export type State = {
+  income: number | undefined;
   expenses: Array<Expense>;
   addExpenseForm: AddExpenseForm;
-  income: number;
+  setIncomeForm: SetIncomeForm;
 };
