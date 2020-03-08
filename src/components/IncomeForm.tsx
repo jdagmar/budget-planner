@@ -22,7 +22,7 @@ export const IncomeForm = (props: Props) => {
           });
         }}
       />
-      <p>{props.setIncomeForm.error}</p>
+      <p className="text-xs text-red-500 mb-2">{props.setIncomeForm.error}</p>
     </>
   );
 };
