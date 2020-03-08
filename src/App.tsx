@@ -5,6 +5,7 @@ import {
   Header,
   ExpenseList,
   IncomeForm,
+  Button,
 } from './components';
 import { Action, State } from './State';
 
@@ -14,6 +15,7 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         expenses: [...state.expenses, action.payload],
+        isExpenseFormVisible: false,
         addExpenseForm: {},
       };
     case 'updateExpenseForm':
@@ -38,11 +40,17 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         expenses: updatedExpenseList,
       };
+    case 'ToggleExpenseFormVisibility':
+      return {
+        ...state,
+        isExpenseFormVisible: action.payload,
+      };
   }
 };
 
 const initState: State = {
   expenses: [],
+  isExpenseFormVisible: false,
   income: undefined,
   addExpenseForm: {},
   setIncomeForm: {},
@@ -57,31 +65,58 @@ export const App = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   return (
-    <main className="m-4">
-      <Header />
-      <IncomeForm
-        setIncomeForm={state.setIncomeForm}
-        onChange={income => {
-          dispatch({ type: 'setIncome', payload: income });
-        }}
-      />
-      <ExpenseForm
-        onSubmit={expense => dispatch({ type: 'addExpense', payload: expense })}
-        expenseForm={state.addExpenseForm}
-        onChange={expense => {
-          dispatch({ type: 'updateExpenseForm', payload: expense });
-        }}
-      />
-      <ExpenseList
-        expenses={state.expenses}
-        onClick={expense => {
-          dispatch({ type: 'removeExpense', payload: expense });
-        }}
-      />
-      <ExpenseSummary
-        expenses={state.expenses}
-        setIncomeForm={state.setIncomeForm}
-      />
+    <main className="h-full flex justify-between flex-col">
+      <div className="m-4">
+        <Header />
+        <IncomeForm
+          setIncomeForm={state.setIncomeForm}
+          onChange={income => {
+            dispatch({ type: 'setIncome', payload: income });
+          }}
+        />
+        <ExpenseList
+          expenses={state.expenses}
+          onClick={expense => {
+            dispatch({ type: 'removeExpense', payload: expense });
+          }}
+        />
+        <ExpenseSummary
+          expenses={state.expenses}
+          setIncomeForm={state.setIncomeForm}
+        />
+      </div>
+
+      <div>
+        <Button
+          text="New Expense"
+          classes="absolute bottom-0 right-0 m-4"
+          color="swampGreen"
+          onClick={() => {
+            dispatch({
+              type: 'ToggleExpenseFormVisibility',
+              payload: !state.isExpenseFormVisible,
+            });
+          }}
+        />
+
+        {state.isExpenseFormVisible && (
+          <ExpenseForm
+            onSubmit={expense =>
+              dispatch({ type: 'addExpense', payload: expense })
+            }
+            expenseForm={state.addExpenseForm}
+            onChange={expense => {
+              dispatch({ type: 'updateExpenseForm', payload: expense });
+            }}
+            onClick={() => {
+              dispatch({
+                type: 'ToggleExpenseFormVisibility',
+                payload: !state.isExpenseFormVisible,
+              });
+            }}
+          />
+        )}
+      </div>
     </main>
   );
 };

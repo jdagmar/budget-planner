@@ -1,19 +1,20 @@
 import React from 'react';
-import { AddIcon } from './Icons';
+import { GetIcon } from '../helpers/GetIcon';
 
 type Props = {
   text: string;
   icon?: string;
-  onClick?: () => void;
   classes?: string;
+  color?: string;
+  onClick?: () => void;
 };
 
 export const Button = (props: Props) => {
-  const cssClasses = 'flex p-2 bg-swampGreen rounded-sm' + props.classes;
+  const cssClasses = `flex p-2 bg-${props.color} rounded-sm font-mono items-center ${props.classes}`;
   return (
     <button className={cssClasses} onClick={props.onClick}>
       <span>{props.text}</span>
-      <AddIcon />
+      {GetIcon(props.icon)}
     </button>
   );
 };

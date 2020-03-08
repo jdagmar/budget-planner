@@ -7,7 +7,8 @@ export type Action =
   | AddExpenseAction
   | UpdateExpenseFormAction
   | SetIncomeAction
-  | RemoveExpenseAction;
+  | RemoveExpenseAction
+  | ToggleExpenseFormVisibilityAction;
 
 export type AddExpenseAction = {
   type: 'addExpense';
@@ -29,6 +30,11 @@ export type RemoveExpenseAction = {
   payload: string;
 };
 
+export type ToggleExpenseFormVisibilityAction = {
+  type: 'ToggleExpenseFormVisibility';
+  payload: boolean;
+};
+
 export type SetIncomeForm = {
   income?: string;
   error?: string;
@@ -45,4 +51,5 @@ export type State = {
   expenses: Array<Expense>;
   addExpenseForm: AddExpenseForm;
   setIncomeForm: SetIncomeForm;
+  isExpenseFormVisible: boolean;
 };
