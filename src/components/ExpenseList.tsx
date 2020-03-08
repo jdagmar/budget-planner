@@ -1,6 +1,6 @@
 import React from 'react';
 import { Expense } from '../State';
-import { RemoveIcon } from './Icons';
+import { GetIcon } from '../helpers/GetIcon';
 
 type Props = {
   expenses: Array<Expense>;
@@ -14,12 +14,17 @@ export const ExpenseList = (props: Props) => {
         <p className="mr-1">{expense.title}</p>
         <p>{expense.cost} kr</p>
         <button onClick={() => props.onClick(expense.title)}>
-          <RemoveIcon />
+          {GetIcon('remove')}
           <span className="sr-only">Remove expense</span>
         </button>
       </li>
     );
   });
 
-  return <ul>{expenseListItems}</ul>;
+  return (
+    <>
+      <h2 className="font-mono">Expenses</h2>
+      <ul>{expenseListItems}</ul>
+    </>
+  );
 };
