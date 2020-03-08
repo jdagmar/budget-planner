@@ -30,8 +30,14 @@ const reducer = (state: State, action: Action): State => {
         setIncomeForm: action.payload,
       };
     case 'removeExpense':
-      // const updated = state.expenses.filter(item => item !== action.payload);
-      return state;
+      const updatedExpenseList = state.expenses.filter(
+        expense => expense.title !== action.payload
+      );
+
+      return {
+        ...state,
+        expenses: updatedExpenseList,
+      };
   }
 };
 
@@ -68,8 +74,8 @@ export const App = () => {
       />
       <ExpenseList
         expenses={state.expenses}
-        onClick={event => {
-          dispatch({ type: 'removeExpense', payload: event });
+        onClick={expense => {
+          dispatch({ type: 'removeExpense', payload: expense });
         }}
       />
       <ExpenseSummary
