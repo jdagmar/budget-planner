@@ -14,14 +14,17 @@ export const Input = (props: Props) => {
   const id = `${props.label.toLowerCase()}-input`;
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block font-sans mb-2 text-sm font-mono">
+      <label
+        htmlFor={id}
+        className="block font-sans mb-2 text-sm font-overpass uppercase tracking-wide"
+      >
         {props.label}
       </label>
       <div className="relative">
         <input
           id={id}
           type={props.type}
-          className={`border border-gray-800 p-2 w-full rounded-sm text-sm ${
+          className={`font-roboto border border-gray-800 p-2 w-full rounded-sm text-sm ${
             props.icon ? 'pl-8' : 'pl-2'
           }`}
           value={props.value}

@@ -60,7 +60,7 @@ export const ExpenseForm = (props: Props) => {
               props.onChange({ ...props.expenseForm, cost: newCost })
             }
           />
-          <Button text="add" color="swampGreen" classes="w-full" />
+          <Button text="add" color="swampGreen" classes="w-full mt-2" />
         </div>
         <p className="text-xs text-red-500 mb-2">{props.expenseForm.error}</p>
       </form>

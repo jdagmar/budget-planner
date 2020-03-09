@@ -13,6 +13,7 @@ export const IncomeForm = (props: Props) => {
       <Input
         label="income"
         type="string"
+        icon="money"
         value={props.setIncomeForm.income?.toString() || ''}
         onChange={newIncome => {
           props.onChange({

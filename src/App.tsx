@@ -49,7 +49,10 @@ const reducer = (state: State, action: Action): State => {
 };
 
 const initState: State = {
-  expenses: [],
+  expenses: [
+    { title: 'Kittens', cost: 500 },
+    { title: 'Cat food', cost: 200 },
+  ],
   isExpenseFormVisible: false,
   income: undefined,
   addExpenseForm: {},
@@ -65,25 +68,27 @@ export const App = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   return (
-    <main className="h-full flex justify-between flex-col">
-      <div className="m-4">
+    <main className="h-screen relative flex justify-between flex-col max-w-md m-auto bg-white shadow">
+      <div>
         <Header />
-        <IncomeForm
-          setIncomeForm={state.setIncomeForm}
-          onChange={income => {
-            dispatch({ type: 'setIncome', payload: income });
-          }}
-        />
-        <ExpenseList
-          expenses={state.expenses}
-          onClick={expense => {
-            dispatch({ type: 'removeExpense', payload: expense });
-          }}
-        />
-        <ExpenseSummary
-          expenses={state.expenses}
-          setIncomeForm={state.setIncomeForm}
-        />
+        <div className="p-4">
+          <IncomeForm
+            setIncomeForm={state.setIncomeForm}
+            onChange={income => {
+              dispatch({ type: 'setIncome', payload: income });
+            }}
+          />
+          <ExpenseList
+            expenses={state.expenses}
+            onClick={expense => {
+              dispatch({ type: 'removeExpense', payload: expense });
+            }}
+          />
+          <ExpenseSummary
+            expenses={state.expenses}
+            setIncomeForm={state.setIncomeForm}
+          />
+        </div>
       </div>
 
       <div>

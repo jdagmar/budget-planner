@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const Button = (props: Props) => {
-  const cssClasses = `flex p-2 bg-${props.color} rounded-sm font-mono items-center ${props.classes}`;
+  const cssClasses = `flex p-2 bg-${props.color} rounded-sm font-overpass items-center ${props.classes}`;
   return (
     <button className={cssClasses} onClick={props.onClick}>
       <span>{props.text}</span>
