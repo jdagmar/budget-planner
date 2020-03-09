@@ -1,5 +1,9 @@
 module.exports = {
   theme: {
+    fontFamily: {
+      overpass: ['Overpass Mono'],
+      roboto: ['Roboto'],
+    },
     extend: {
       colors: {
         tangerine: '#ffa06f',
