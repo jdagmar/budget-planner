@@ -20,7 +20,9 @@ export const ExpenseSummary = (props: Props) => {
   return (
     <div className="mt-2 font-roboto">
       <p>Sum of expenses: {sumUpExpenses(expenses)} SEK</p>
-      <p>Balance: {calcAccountBalance(props.setIncomeForm.income)} SEK </p>
+      <p>
+        Account balance: {calcAccountBalance(props.setIncomeForm.income)} SEK{' '}
+      </p>
     </div>
   );
 };

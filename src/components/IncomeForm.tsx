@@ -1,6 +1,6 @@
 import React from 'react';
-import { Input } from './Input';
 import { SetIncomeForm } from '../State';
+import { Input } from './Input';
 
 type Props = {
   setIncomeForm: SetIncomeForm;

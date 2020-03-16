@@ -1,7 +1,7 @@
 import React from 'react';
+import { AddExpenseForm, Expense } from '../State';
 import { Button } from './Button';
 import { Input } from './Input';
-import { AddExpenseForm, Expense } from '../State';
 
 type Props = {
   expenseForm: AddExpenseForm;
@@ -13,12 +13,14 @@ type Props = {
 export const ExpenseForm = (props: Props) => {
   return (
     <div className="p-4 absolute bottom-0 z-50 w-full bg-gray-200">
-      <Button
-        text=""
-        icon="close"
-        classes="absolute right-0 pr-4"
-        onClick={props.onClick}
-      />
+      <div className="absolute right-0 pr-4">
+        <Button
+          text="Close"
+          isTextVisible={false}
+          icon="close"
+          onClick={props.onClick}
+        />
+      </div>
 
       <form
         className="mt-4"
@@ -60,7 +62,7 @@ export const ExpenseForm = (props: Props) => {
               props.onChange({ ...props.expenseForm, cost: newCost })
             }
           />
-          <Button text="add" color="swampGreen" classes="w-full mt-2" />
+          <Button text="add" isTextVisible={true} color="swampGreen" />
         </div>
         <p className="text-xs text-red-500 mb-2">{props.expenseForm.error}</p>
       </form>

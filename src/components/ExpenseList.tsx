@@ -1,6 +1,6 @@
 import React from 'react';
 import { Expense } from '../State';
-import { GetIcon } from '../helpers/GetIcon';
+import { Button } from '../components/Button';
 
 type Props = {
   expenses: Array<Expense>;
@@ -11,15 +11,17 @@ export const ExpenseList = (props: Props) => {
   const expenseListItems = props.expenses.map(expense => {
     return (
       <li
-        className="flex justify-between my-2 bg-gray-200 p-2 rounded font-roboto"
+        className="flex justify-between items-center my-2 bg-gray-200 rounded font-roboto pl-4"
         key={expense.title}
       >
         <p className="mr-1">{expense.title}</p>
         <p>{expense.cost} kr</p>
-        <button onClick={() => props.onClick(expense.title)}>
-          {GetIcon('remove')}
-          <span className="sr-only">Remove expense</span>
-        </button>
+        <Button
+          text="Remove Expense"
+          isTextVisible={false}
+          icon="remove"
+          onClick={() => props.onClick(expense.title)}
+        />
       </li>
     );
   });
@@ -30,7 +32,7 @@ export const ExpenseList = (props: Props) => {
       {expenseListItems.length > 0 ? (
         <ul className="mt-3 mb-8">{expenseListItems}</ul>
       ) : (
-        <p>Add an expense to get started</p>
+        <p className="font-roboto">Add an expense to get started</p>
       )}
     </div>
   );

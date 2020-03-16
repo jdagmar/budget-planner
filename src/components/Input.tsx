@@ -3,15 +3,15 @@ import { GetIcon } from '../helpers/GetIcon';
 
 type Props = {
   label: string;
-  placeholder?: string;
   type: string;
   value: string;
-  onChange: (value: string) => void;
   icon?: string;
+  onChange: (value: string) => void;
 };
 
 export const Input = (props: Props) => {
   const id = `${props.label.toLowerCase()}-input`;
+
   return (
     <div className="mb-4">
       <label
