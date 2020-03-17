@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { Action, State } from './State';
 import {
   ExpenseForm,
   ExpenseSummary,
@@ -7,7 +8,6 @@ import {
   IncomeForm,
   Button,
 } from './components';
-import { Action, State } from './State';
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -44,6 +44,7 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         isExpenseFormVisible: action.payload,
+        addExpenseForm: {},
       };
   }
 };
