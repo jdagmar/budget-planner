@@ -12,18 +12,8 @@ type Props = {
 
 export const ExpenseForm = (props: Props) => {
   return (
-    <div className="p-4 absolute bottom-0 z-50 w-full bg-gray-200">
-      <div className="absolute right-0 pr-4">
-        <Button
-          text="Close"
-          isTextVisible={false}
-          icon="close"
-          onClick={props.onClick}
-        />
-      </div>
-
+    <div className="flex flex-col p-4 absolute bottom-0 z-50 w-full bg-gray-200">
       <form
-        className="mt-4"
         onSubmit={e => {
           const { cost, title } = props.expenseForm;
 
@@ -39,10 +29,18 @@ export const ExpenseForm = (props: Props) => {
               title: title,
             });
           } else {
-            props.onChange({ ...props.expenseForm, error: 'not valid' });
+            props.onChange({
+              ...props.expenseForm,
+              error:
+                'Make sure that the expense you want to add both have a title and a cost, which has to be a number',
+            });
           }
         }}
       >
+        <p className="flex text-xs text-red-500 mb-4">
+          {props.expenseForm.error}
+        </p>
+
         <div className="flex justify-between flex-col">
           <Input
             type="text"
@@ -62,9 +60,16 @@ export const ExpenseForm = (props: Props) => {
               props.onChange({ ...props.expenseForm, cost: newCost })
             }
           />
-          <Button text="add" isTextVisible={true} color="swampGreen" />
+          <div className="flex mt-4">
+            <Button text="add" isTextVisible={true} color="swampGreen" />
+            <Button
+              text="Cancel"
+              isTextVisible={true}
+              color="peach"
+              onClick={props.onClick}
+            />
+          </div>
         </div>
-        <p className="text-xs text-red-500 mb-2">{props.expenseForm.error}</p>
       </form>
     </div>
   );
