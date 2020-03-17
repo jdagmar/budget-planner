@@ -5,6 +5,7 @@ import {
   MoneyIcon,
   RemoveIcon,
   CloseIcon,
+  ErrorIcon,
 } from '../components/Icons';
 
 export const GetIcon = (icon?: string, cssClass?: string) => {
@@ -17,6 +18,9 @@ export const GetIcon = (icon?: string, cssClass?: string) => {
       return <RemoveIcon cssClass={cssClass} />;
     case 'close':
       return <CloseIcon cssClass={cssClass} />;
+    case 'error':
+      return <ErrorIcon cssClass={cssClass} />;
+
     default:
       return null;
   }
