@@ -16,12 +16,14 @@ export const ExpenseList = (props: Props) => {
       >
         <p className="mr-1">{expense.title}</p>
         <p>{expense.cost} kr</p>
-        <Button
-          text="Remove Expense"
-          isTextVisible={false}
-          icon="remove"
-          onClick={() => props.onClick(expense.title)}
-        />
+        <div className="max-w-sm">
+          <Button
+            text="Remove Expense"
+            isTextVisible={false}
+            icon="remove"
+            onClick={() => props.onClick(expense.title)}
+          />
+        </div>
       </li>
     );
   });
