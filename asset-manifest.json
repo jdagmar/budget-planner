@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/budget-planner/static/css/main.57d005de.chunk.css",
-    "main.js": "/budget-planner/static/js/main.0a5172cc.chunk.js",
-    "main.js.map": "/budget-planner/static/js/main.0a5172cc.chunk.js.map",
+    "main.css": "/budget-planner/static/css/main.4137886a.chunk.css",
+    "main.js": "/budget-planner/static/js/main.a2d288a1.chunk.js",
+    "main.js.map": "/budget-planner/static/js/main.a2d288a1.chunk.js.map",
     "runtime-main.js": "/budget-planner/static/js/runtime-main.96318483.js",
     "runtime-main.js.map": "/budget-planner/static/js/runtime-main.96318483.js.map",
     "static/js/2.fa129672.chunk.js": "/budget-planner/static/js/2.fa129672.chunk.js",
     "static/js/2.fa129672.chunk.js.map": "/budget-planner/static/js/2.fa129672.chunk.js.map",
     "index.html": "/budget-planner/index.html",
-    "precache-manifest.6d09299ced4d634ddf12765ddf4c52f5.js": "/budget-planner/precache-manifest.6d09299ced4d634ddf12765ddf4c52f5.js",
+    "precache-manifest.d8d3b33b7a7a16a071d64ce147db2f3b.js": "/budget-planner/precache-manifest.d8d3b33b7a7a16a071d64ce147db2f3b.js",
     "service-worker.js": "/budget-planner/service-worker.js",
-    "static/css/main.57d005de.chunk.css.map": "/budget-planner/static/css/main.57d005de.chunk.css.map",
+    "static/css/main.4137886a.chunk.css.map": "/budget-planner/static/css/main.4137886a.chunk.css.map",
     "static/js/2.fa129672.chunk.js.LICENSE.txt": "/budget-planner/static/js/2.fa129672.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.96318483.js",
     "static/js/2.fa129672.chunk.js",
-    "static/css/main.57d005de.chunk.css",
-    "static/js/main.0a5172cc.chunk.js"
+    "static/css/main.4137886a.chunk.css",
+    "static/js/main.a2d288a1.chunk.js"
   ]
 }
