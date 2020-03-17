@@ -19,7 +19,9 @@ export const IncomeForm = (props: Props) => {
           props.onChange({
             ...props.setIncomeForm,
             income: newIncome,
-            error: isNaN(parseInt(newIncome)) ? 'not valid' : undefined,
+            error: isNaN(parseInt(newIncome))
+              ? 'Income should be a number'
+              : undefined,
           });
         }}
       />
