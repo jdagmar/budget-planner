@@ -10,8 +10,14 @@ type Props = {
 };
 
 export const Button = (props: Props) => {
+  const getButtonColor = (color: string | undefined) => {
+    if (color !== undefined) {
+      return `bg-${props.color}-500 hover:bg-${props.color}-600`;
+    }
+  };
+
   /* If component is used as a icon button, add extra padding to ensure minimum 42px touch accuracy */
-  const btnClasses = `bg-${props.color} rounded-sm ${
+  const btnClasses = `${getButtonColor(props.color)} rounded-sm w-full mr-2 ${
     !props.isTextVisible && props.icon ? 'p-4' : 'p-2'
   } `;
 
