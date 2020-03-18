@@ -16,7 +16,7 @@ export const Input = (props: Props) => {
     <div className="mb-4">
       <label
         htmlFor={id}
-        className="block font-sans mb-2 text-sm font-overpass uppercase tracking-wide"
+        className="block font-sans mb-2 font-overpass uppercase tracking-wide"
       >
         {props.label}
       </label>
@@ -24,7 +24,7 @@ export const Input = (props: Props) => {
         <input
           id={id}
           type={props.type}
-          className={`font-roboto border border-gray-800 p-2 w-full rounded-sm text-sm ${
+          className={`font-roboto border border-gray-800 p-2 w-full rounded-sm  ${
             props.icon ? 'pl-8' : 'pl-2'
           }`}
           value={props.value}
