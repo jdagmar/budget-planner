@@ -50,7 +50,7 @@ export const ExpenseSummary = (props: Props) => {
       </div>
 
       <p className="flex justify-end items-center mt-4 text-sm">
-        Total:
+        Remaining:
         <span
           className={`${
             accountBalance < 0 ? 'text-red-700' : ''
