@@ -45,7 +45,7 @@ export const ExpenseSummary = (props: Props) => {
             width: percentageSpent + '%',
           }}
         >
-          {sumUpExpenses(expenses)}
+          <p className="mx-2">{sumUpExpenses(expenses)}</p>
         </div>
       </div>
 
