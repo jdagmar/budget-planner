@@ -93,17 +93,19 @@ export const App = () => {
       </div>
 
       <div>
-        <Button
-          text="Add expense"
-          isTextVisible={true}
-          color="swampGreen"
-          onClick={() => {
-            dispatch({
-              type: 'ToggleExpenseFormVisibility',
-              payload: !state.isExpenseFormVisible,
-            });
-          }}
-        />
+        <div className="m-4">
+          <Button
+            text="Add expense"
+            isTextVisible={true}
+            color="swampGreen"
+            onClick={() => {
+              dispatch({
+                type: 'ToggleExpenseFormVisibility',
+                payload: !state.isExpenseFormVisible,
+              });
+            }}
+          />
+        </div>
 
         {state.isExpenseFormVisible && (
           <ExpenseForm
