@@ -50,10 +50,7 @@ const reducer = (state: State, action: Action): State => {
 };
 
 const initState: State = {
-  expenses: [
-    { title: 'Kittens', cost: 500 },
-    { title: 'Cat food', cost: 200 },
-  ],
+  expenses: [],
   isExpenseFormVisible: false,
   income: undefined,
   addExpenseForm: {},
