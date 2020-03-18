@@ -15,7 +15,7 @@ export const ExpenseList = (props: Props) => {
         key={expense.title}
       >
         <p className="mr-1">{expense.title}</p>
-        <p>{expense.cost} kr</p>
+        <p>{expense.cost}</p>
         <div className="max-w-sm">
           <Button
             text="Remove Expense"
@@ -34,7 +34,7 @@ export const ExpenseList = (props: Props) => {
       {expenseListItems.length > 0 ? (
         <ul className="mt-3 mb-8">{expenseListItems}</ul>
       ) : (
-        <p className="font-roboto">Add an expense to get started</p>
+        <p className="font-roboto mt-2 mb-5">Add an expense to get started</p>
       )}
     </div>
   );
