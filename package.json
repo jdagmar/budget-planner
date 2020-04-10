@@ -17,6 +17,9 @@
     "tailwindcss": "^1.2.0",
     "typescript": "~3.7.2"
   },
+  "resolutions": {
+    "minimist": "^1.2.5"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -24,7 +27,8 @@
     "eject": "react-scripts eject",
     "build:css": "tailwindcss build src/css/index.css -c tailwind.config.js -o src/css/tailwind.css",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "minimist": "^1.2.5"
   }
 }
