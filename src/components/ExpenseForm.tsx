@@ -37,7 +37,7 @@ export const ExpenseForm = (props: Props) => {
           }
         }}
       >
-        <p className="flex text-xs text-red-500 mb-4">
+        <p className="flex text-sm text-red-700 mb-4">
           {props.expenseForm.error}
         </p>
 
