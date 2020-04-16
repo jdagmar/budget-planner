@@ -34,7 +34,7 @@ export const Input = (props: Props) => {
         />
         <div className="absolute top-0 bottom-0">
           <div className="flex items-center h-full ml-2">
-            {GetIcon(props.icon)}
+            {GetIcon(1, props.icon)}
           </div>
         </div>
       </div>

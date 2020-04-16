@@ -57,7 +57,7 @@ export const ExpenseSummary = (props: Props) => {
           } px-2 flex items-center`}
         >
           <span>{accountBalance}</span>
-          <span>{accountBalance < 0 && GetIcon('error', 'ml-2')}</span>
+          <span>{accountBalance < 0 && GetIcon(1, 'error', 'ml-2')}</span>
         </span>
       </p>
     </div>
