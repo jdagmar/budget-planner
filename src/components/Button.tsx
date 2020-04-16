@@ -4,31 +4,38 @@ import { GetIcon } from '../helpers/GetIcon';
 type Props = {
   text: string;
   isTextVisible: boolean;
-  icon?: string;
-  color?: string;
+  color: string;
+  style: 'solid' | 'outline' | 'none';
   onClick?: () => void;
+  icon?: string;
 };
 
 export const Button = (props: Props) => {
-  const getButtonColor = (color: string | undefined) => {
-    if (color !== undefined) {
-      return `bg-${props.color}-500 hover:bg-${props.color}-600`;
+  const getButtonStyle = (color: string, style: string) => {
+    switch (style) {
+      case 'solid':
+        return `bg-${color}-800 hover:bg-${color}-900 text-white rounded-sm w-full mr-2 p-2`;
+      case 'outline':
+        return 'border-blue-800 border-2 text-blue-800 w-full mr-2 p-2';
+      default:
+        return 'p-4';
     }
   };
 
-  /* If component is used as a icon button, add extra padding to ensure minimum 42px touch accuracy */
-  const btnClasses = `${getButtonColor(props.color)} rounded-sm w-full mr-2 ${
-    !props.isTextVisible && props.icon ? 'p-4' : 'p-2'
-  } `;
-
-  /* Make sure a screen reader text is available if component is used as a icon button */
-  const btnTextClasses = `${
-    props.isTextVisible ? '' : 'sr-only'
-  } font-overpass uppercase tracking-wide`;
-
   return (
-    <button className={btnClasses} onClick={props.onClick}>
-      <span className={btnTextClasses}>{props.text}</span>
+    <button
+      className={getButtonStyle(props.color, props.style)}
+      onClick={props.onClick}
+    >
+      <span
+        className={
+          props.isTextVisible
+            ? 'font-overpass uppercase tracking-wide'
+            : 'sr-only'
+        }
+      >
+        {props.text}
+      </span>
       {GetIcon(props.icon)}
     </button>
   );

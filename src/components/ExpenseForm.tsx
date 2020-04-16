@@ -61,12 +61,18 @@ export const ExpenseForm = (props: Props) => {
             }
           />
           <div className="flex mt-4">
-            <Button text="add" isTextVisible={true} color="swampGreen" />
+            <Button
+              text="add"
+              isTextVisible={true}
+              color="blue"
+              style="solid"
+            />
             <Button
               text="Cancel"
               isTextVisible={true}
-              color="peach"
               onClick={props.onClick}
+              color="blue"
+              style="outline"
             />
           </div>
         </div>

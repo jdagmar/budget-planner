@@ -22,6 +22,8 @@ export const ExpenseList = (props: Props) => {
             isTextVisible={false}
             icon="remove"
             onClick={() => props.onClick(expense.title)}
+            color="none"
+            style="none"
           />
         </div>
       </li>
