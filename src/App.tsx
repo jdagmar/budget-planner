@@ -95,7 +95,7 @@ export const App = () => {
             text="Add expense"
             isTextVisible={true}
             color="blue"
-            style="solid"
+            fill="solid"
             onClick={() => {
               dispatch({
                 type: 'ToggleExpenseFormVisibility',

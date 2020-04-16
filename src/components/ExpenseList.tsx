@@ -23,7 +23,7 @@ export const ExpenseList = (props: Props) => {
             icon="remove"
             onClick={() => props.onClick(expense.title)}
             color="none"
-            style="none"
+            fill="none"
           />
         </div>
       </li>

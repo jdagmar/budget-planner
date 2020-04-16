@@ -5,14 +5,14 @@ type Props = {
   text: string;
   isTextVisible: boolean;
   color: string;
-  style: 'solid' | 'outline' | 'none';
+  fill: 'solid' | 'outline' | 'none';
   onClick?: () => void;
   icon?: string;
 };
 
 export const Button = (props: Props) => {
-  const getButtonStyle = (color: string, style: string) => {
-    switch (style) {
+  const getButtonStyle = (color: string, fill: string) => {
+    switch (fill) {
       case 'solid':
         return `bg-${color}-800 hover:bg-${color}-900 text-white rounded-sm w-full mr-2 p-2`;
       case 'outline':
@@ -24,7 +24,7 @@ export const Button = (props: Props) => {
 
   return (
     <button
-      className={getButtonStyle(props.color, props.style)}
+      className={getButtonStyle(props.color, props.fill)}
       onClick={props.onClick}
     >
       <span
