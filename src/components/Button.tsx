@@ -16,7 +16,7 @@ export const Button = (props: Props) => {
       case 'solid':
         return `bg-${color}-800 hover:bg-${color}-900 text-white rounded-sm w-full mr-2 p-2`;
       case 'outline':
-        return 'border-blue-800 border-2 text-blue-800 w-full mr-2 p-2';
+        return `border-${color}-800 hover:border-${color}-900 border-2 text-blue-800 w-full mr-2 p-2`;
       default:
         return 'p-4';
     }
@@ -36,7 +36,7 @@ export const Button = (props: Props) => {
       >
         {props.text}
       </span>
-      {GetIcon(props.icon)}
+      {GetIcon(1, props.icon)}
     </button>
   );
 };
