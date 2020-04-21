@@ -14,9 +14,9 @@ export const Button = (props: Props) => {
   const getButtonStyle = (color: string, fill: string) => {
     switch (fill) {
       case 'solid':
-        return `bg-${color}-800 hover:bg-${color}-900 text-white rounded-sm w-full mr-2 p-2`;
+        return `bg-${color}-800 hover:bg-${color}-900 focus:bg-${color}-900 text-white rounded-sm w-full mr-2 p-2`;
       case 'outline':
-        return `border-${color}-800 hover:border-${color}-900 border-2 text-blue-800 w-full mr-2 p-2`;
+        return `border-${color}-800 hover:border-${color}-900 focus:border-${color}-900 border-2 text-blue-800 w-full mr-2 p-2`;
       default:
         return 'p-4';
     }
