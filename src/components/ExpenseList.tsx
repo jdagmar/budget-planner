@@ -14,18 +14,16 @@ export const ExpenseList = (props: Props) => {
         className="flex justify-between items-center my-2 bg-gray-200 rounded font-roboto pl-4"
         key={expense.title}
       >
-        <p className="mr-1">{expense.title}</p>
-        <p>{expense.cost}</p>
-        <div className="max-w-sm">
-          <Button
-            text="Remove Expense"
-            isTextVisible={false}
-            icon="remove"
-            onClick={() => props.onClick(expense.title)}
-            color="none"
-            fill="none"
-          />
-        </div>
+        <p className="mr-1 w-5/12">{expense.title}</p>
+        <p className="w-5/12">{expense.cost}</p>
+        <Button
+          text="Remove Expense"
+          isTextVisible={false}
+          icon="remove"
+          onClick={() => props.onClick(expense.title)}
+          color="none"
+          fill="none"
+        />
       </li>
     );
   });
