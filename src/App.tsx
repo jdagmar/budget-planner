@@ -9,6 +9,13 @@ import {
   Button,
 } from './components';
 
+const updateLocalStorageReducer = (state: State, action: Action): State => {
+  const newState = reducer(state, action);
+  localStorage.setItem('state', JSON.stringify(newState));
+
+  return newState;
+};
+
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'addExpense':
@@ -24,11 +31,14 @@ const reducer = (state: State, action: Action): State => {
         addExpenseForm: action.payload,
       };
     case 'setIncome':
-      const newIncome = parseInt(action.payload.income || '');
-
       return {
         ...state,
-        income: action.payload.error ? state.income : newIncome,
+        income: action.payload.incomeFormatError
+          ? state.income
+          : parseInt(action.payload.income || ''),
+        currency: action.payload.currencyFormatError
+          ? state.currency
+          : action.payload.currency,
         setIncomeForm: action.payload,
       };
     case 'removeExpense':
@@ -49,12 +59,15 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-const initState: State = {
+const initState: State = JSON.parse(
+  localStorage.getItem('state') || 'null'
+) || {
   expenses: [],
-  isExpenseFormVisible: false,
   income: undefined,
+  currency: undefined,
   addExpenseForm: {},
   setIncomeForm: {},
+  isExpenseFormVisible: false,
 };
 
 export const AppContext = React.createContext([
@@ -63,10 +76,13 @@ export const AppContext = React.createContext([
 ] as [State, React.Dispatch<Action>]);
 
 export const App = () => {
-  const [state, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useReducer(updateLocalStorageReducer, initState);
 
   return (
     <main className="h-screen relative flex justify-between flex-col max-w-md m-auto bg-white shadow">
+      {state.isExpenseFormVisible && (
+        <div className="max-w-md m-auto bg-black bg-opacity-25 fixed inset-0"></div>
+      )}
       <div>
         <Header />
         <div className="p-4">
@@ -84,6 +100,7 @@ export const App = () => {
           />
           <ExpenseSummary
             expenses={state.expenses}
+            currency={state.currency}
             setIncomeForm={state.setIncomeForm}
           />
         </div>

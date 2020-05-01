@@ -37,7 +37,9 @@ export type ToggleExpenseFormVisibilityAction = {
 
 export type SetIncomeForm = {
   income?: string;
-  error?: string;
+  incomeFormatError?: string;
+  currency?: string;
+  currencyFormatError?: string;
 };
 
 export type AddExpenseForm = {
@@ -48,6 +50,7 @@ export type AddExpenseForm = {
 
 export type State = {
   income: number | undefined;
+  currency: string | undefined;
   expenses: Array<Expense>;
   addExpenseForm: AddExpenseForm;
   setIncomeForm: SetIncomeForm;
