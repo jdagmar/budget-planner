@@ -4,6 +4,7 @@ import { GetIcon } from '../helpers/GetIcon';
 
 type Props = {
   expenses: Array<Expense>;
+  currency: string | undefined;
   setIncomeForm: SetIncomeForm;
 };
 
@@ -59,6 +60,7 @@ export const ExpenseSummary = (props: Props) => {
           <span>{accountBalance}</span>
           <span>{accountBalance < 0 && GetIcon(1, 'error', 'ml-2')}</span>
         </span>
+        {props.currency}
       </p>
     </div>
   );
