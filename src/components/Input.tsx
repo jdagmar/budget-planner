@@ -24,7 +24,7 @@ export const Input = (props: Props) => {
         <input
           id={id}
           type={props.type}
-          className={`font-roboto border border-gray-800 p-2 w-full rounded-sm  ${
+          className={`font-roboto bg-transparent border border-gray-800 p-2 w-full rounded-sm  ${
             props.icon ? 'pl-8' : 'pl-2'
           }`}
           value={props.value}
