@@ -21,12 +21,12 @@ export const IncomeForm = (props: Props) => {
               ...props.setIncomeForm,
               income: newIncome,
               incomeFormatError: isNaN(parseInt(newIncome))
-                ? 'Income should be a number'
+                ? 'Enter a numerical value'
                 : undefined,
             });
           }}
         />
-        <p className="text-sm text-red-700 mb-2">
+        <p className="text-xs text-red-700 mb-2">
           {props.setIncomeForm.incomeFormatError}
         </p>
       </div>
@@ -42,11 +42,11 @@ export const IncomeForm = (props: Props) => {
               currency: newCurrency,
               currencyFormatError: isNaN(parseInt(newCurrency))
                 ? undefined
-                : 'Income should be a string',
+                : 'Enter a alphabetical value',
             });
           }}
         />
-        <p className="text-sm text-red-700 mb-2">
+        <p className="text-xs text-red-700 mb-2">
           {props.setIncomeForm.currencyFormatError}
         </p>
       </div>

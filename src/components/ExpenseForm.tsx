@@ -32,7 +32,7 @@ export const ExpenseForm = (props: Props) => {
             props.onChange({
               ...props.expenseForm,
               error:
-                'Make sure that the expense you want to add both have a title and a cost, which has to be a number',
+                'An expense needs to have a alphabetical title and a numerical cost',
             });
           }
         }}
