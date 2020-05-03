@@ -1,6 +1,5 @@
 import React from 'react';
 import { Expense, SetIncomeForm } from '../State';
-import { GetIcon } from '../helpers/GetIcon';
 
 type Props = {
   expenses: Array<Expense>;
@@ -52,15 +51,13 @@ export const ExpenseSummary = (props: Props) => {
 
       <p className="flex justify-end items-center mt-4 text-sm">
         Remaining:
-        <span
+        <div
           className={`${
             accountBalance < 0 ? 'text-red-700' : ''
           } px-2 flex items-center`}
         >
-          <span>{accountBalance}</span>
-          <span>{accountBalance < 0 && GetIcon(1, 'error', 'ml-2')}</span>
-        </span>
-        {props.currency}
+          {accountBalance} {props.currency}
+        </div>
       </p>
     </div>
   );
