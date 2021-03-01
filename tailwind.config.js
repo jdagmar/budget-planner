@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     fontFamily: {
       overpass: ['Overpass Mono'],
-      roboto: ['Roboto'],
+      raleway: ['Raleway'],
     },
     extend: {
       colors: {

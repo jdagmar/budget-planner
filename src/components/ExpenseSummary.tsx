@@ -36,9 +36,9 @@ export const ExpenseSummary = (props: Props) => {
         <div
           className={`${
             percentageSpent > 100
-              ? 'bg-red-500'
+              ? 'bg-red-700 text-white'
               : percentageSpent < 100
-              ? 'bg-peach-500'
+              ? 'bg-peach-600'
               : 'bg-gray-400'
           } text-xs leading-none py-2 text-center max-w-full`}
           style={{

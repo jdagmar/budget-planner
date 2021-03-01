@@ -29,9 +29,7 @@ export const Button = (props: Props) => {
     >
       <span
         className={
-          props.isTextVisible
-            ? 'font-overpass uppercase tracking-wide'
-            : 'sr-only'
+          props.isTextVisible ? 'font-overpass  tracking-wide' : 'sr-only'
         }
       >
         {props.text}

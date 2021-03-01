@@ -12,7 +12,7 @@ type Props = {
 
 export const ExpenseForm = (props: Props) => {
   return (
-    <div className="flex flex-col p-4 absolute bottom-0 z-50 w-full bg-gray-200">
+    <div className="flex flex-col p-4 absolute bottom-0 z-50 w-full bg-white">
       <form
         onSubmit={e => {
           const { cost, title } = props.expenseForm;
@@ -61,7 +61,7 @@ export const ExpenseForm = (props: Props) => {
             }
           />
           <div className="flex mt-4">
-            <Button text="add" isTextVisible={true} color="blue" fill="solid" />
+            <Button text="Add" isTextVisible={true} color="blue" fill="solid" />
             <Button
               text="Cancel"
               isTextVisible={true}

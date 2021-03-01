@@ -7,19 +7,33 @@ type Props = {
 
 export const RemoveIcon = (props: Props) => {
   return (
+    // <svg
+    //   viewBox="0 0 24 24"
+    //   fill="none"
+    //   stroke="currentColor"
+    //   strokeWidth={2}
+    //   strokeLinecap="round"
+    //   strokeLinejoin="round"
+    //   aria-hidden="true"
+    //   width={`${props.size}em`}
+    //   height={`${props.size}em`}
+    //   className={props.cssClass}
+    // >
+    //   <path d="M21 4H8l-7 8 7 8h13a2 2 0 002-2V6a2 2 0 00-2-2zM18 9l-6 6M12 9l6 6" />
+    // </svg>
     <svg
+      width={`${props.size}em`}
+      height={`${props.size}em`}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      width={`${props.size}em`}
-      height={`${props.size}em`}
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       className={props.cssClass}
     >
-      <path d="M21 4H8l-7 8 7 8h13a2 2 0 002-2V6a2 2 0 00-2-2zM18 9l-6 6M12 9l6 6" />
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
     </svg>
   );
 };

@@ -12,7 +12,7 @@ export const IncomeForm = (props: Props) => {
     <div className="flex">
       <div className="w-8/12 mr-2">
         <Input
-          label="income"
+          label="Income"
           type="string"
           icon="money"
           value={props.setIncomeForm.income?.toString() || ''}
@@ -32,7 +32,7 @@ export const IncomeForm = (props: Props) => {
       </div>
       <div className="w-4/12">
         <Input
-          label="currency"
+          label="Currency"
           type="string"
           icon="label"
           value={props.setIncomeForm.currency || ''}
