@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/budget-planner/static/css/main.e1fb80b4.chunk.css",
-    "main.js": "/budget-planner/static/js/main.a9021a10.chunk.js",
-    "main.js.map": "/budget-planner/static/js/main.a9021a10.chunk.js.map",
+    "main.css": "/budget-planner/static/css/main.c3c2ed21.chunk.css",
+    "main.js": "/budget-planner/static/js/main.92a97712.chunk.js",
+    "main.js.map": "/budget-planner/static/js/main.92a97712.chunk.js.map",
     "runtime-main.js": "/budget-planner/static/js/runtime-main.341010cc.js",
     "runtime-main.js.map": "/budget-planner/static/js/runtime-main.341010cc.js.map",
     "static/js/2.638404b8.chunk.js": "/budget-planner/static/js/2.638404b8.chunk.js",
     "static/js/2.638404b8.chunk.js.map": "/budget-planner/static/js/2.638404b8.chunk.js.map",
     "index.html": "/budget-planner/index.html",
-    "static/css/main.e1fb80b4.chunk.css.map": "/budget-planner/static/css/main.e1fb80b4.chunk.css.map",
+    "static/css/main.c3c2ed21.chunk.css.map": "/budget-planner/static/css/main.c3c2ed21.chunk.css.map",
     "static/js/2.638404b8.chunk.js.LICENSE.txt": "/budget-planner/static/js/2.638404b8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.341010cc.js",
     "static/js/2.638404b8.chunk.js",
-    "static/css/main.e1fb80b4.chunk.css",
-    "static/js/main.a9021a10.chunk.js"
+    "static/css/main.c3c2ed21.chunk.css",
+    "static/js/main.92a97712.chunk.js"
   ]
 }
