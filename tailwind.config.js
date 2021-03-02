@@ -21,7 +21,7 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ['focus'],
+    backgroundColor: ['focus', 'hover'],
   },
   plugins: [],
 };

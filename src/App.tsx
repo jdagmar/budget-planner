@@ -82,7 +82,7 @@ export const App = () => {
     <main className="h-screen relative flex justify-between flex-col max-w-md m-auto bg-white shadow">
       {state.isExpenseFormVisible && (
         <div
-          className="max-w-md m-auto bg-black bg-opacity-25 fixed inset-0"
+          className="max-w-md m-auto bg-black bg-opacity-10 fixed inset-0"
           onClick={() => {
             dispatch({
               type: 'ToggleExpenseFormVisibility',

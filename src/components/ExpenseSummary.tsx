@@ -31,7 +31,7 @@ export const ExpenseSummary = (props: Props) => {
   const accountBalance = calcAccountBalance(props.setIncomeForm.income);
 
   return (
-    <div className="mt-2 font-overpass">
+    <div className="mt-2">
       <div className="shadow w-full bg-grey-light rounded">
         <div
           className={`${
@@ -40,12 +40,14 @@ export const ExpenseSummary = (props: Props) => {
               : percentageSpent < 100
               ? 'bg-peach-600'
               : 'bg-gray-400'
-          } text-xs leading-none py-2 text-center max-w-full`}
+          } leading-tight py-2 text-center max-w-full`}
           style={{
             width: percentageSpent + '%',
           }}
         >
-          <p className="mx-2">{sumUpExpenses(expenses)}</p>
+          <p className="mx-2">
+            {sumUpExpenses(expenses)} {props.currency}
+          </p>
         </div>
       </div>
 

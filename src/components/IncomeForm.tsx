@@ -26,7 +26,7 @@ export const IncomeForm = (props: Props) => {
             });
           }}
         />
-        <p className="text-xs text-red-700 mb-2">
+        <p className="text-sm text-red-700 mb-2">
           {props.setIncomeForm.incomeFormatError}
         </p>
       </div>
@@ -46,7 +46,7 @@ export const IncomeForm = (props: Props) => {
             });
           }}
         />
-        <p className="text-xs text-red-700 mb-2">
+        <p className="text-sm text-red-700 mb-2">
           {props.setIncomeForm.currencyFormatError}
         </p>
       </div>

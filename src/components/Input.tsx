@@ -16,7 +16,7 @@ export const Input = (props: Props) => {
     <div className="mb-4">
       <label
         htmlFor={id}
-        className="block font-sans mb-2 font-overpass text-sm tracking-wide"
+        className="block font-bold font-sans mb-2  tracking-wider text-md"
       >
         {props.label}
       </label>
@@ -24,7 +24,7 @@ export const Input = (props: Props) => {
         <input
           id={id}
           type={props.type}
-          className={`font-raleway bg-transparent border border-gray-800 p-2 w-full rounded-sm  ${
+          className={` bg-transparent border border-gray-600 text-gray-600 p-2 w-full rounded-sm  ${
             props.icon ? 'pl-8' : 'pl-2'
           }`}
           value={props.value}
@@ -32,7 +32,7 @@ export const Input = (props: Props) => {
             props.onChange(e.target.value);
           }}
         />
-        <div className="absolute top-0 bottom-0">
+        <div className="absolute top-0 bottom-0 text-gray-600">
           <div className="flex items-center h-full ml-2">
             {GetIcon(1, props.icon)}
           </div>
